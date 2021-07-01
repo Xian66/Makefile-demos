@@ -1,0 +1,7 @@
+#利用VPATH到不同目录(src目录和include目录)下搜索所需的依赖文件
+VPATH=src:include
+main:f1.o main.o
+.PHONY:clean
+#由于利用了VPATH来寻找依赖文件，生成的×.o文件会在当前目录下
+clean:
+	rm *.o

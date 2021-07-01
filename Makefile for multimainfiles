@@ -1,0 +1,11 @@
+#all是个伪指令，当敲make命令后makefile会去找server 和 client，继续往下找
+all:server client
+server:server.o
+server.o:server.c
+	gcc -g -c $^ -o $@
+client:client.o
+client.o:client.c
+	gcc -g -c $^ -o $@
+.PHONY:clean
+clean:
+	rm *.o
